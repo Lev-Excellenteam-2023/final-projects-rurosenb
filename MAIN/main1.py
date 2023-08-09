@@ -53,6 +53,3 @@ if __name__ == "__main__":
     presentation_file = "C:/targilim/Ruty-Presentation.pptx"
     main = Main(presentation_file)
     asyncio.run(main.run())
-
-
-

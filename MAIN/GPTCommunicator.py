@@ -1,8 +1,15 @@
 # This class will handle communication with the GPT-3.5 AI model and sending requests to the OpenAI API.
 import openai
 import asyncio
+import os
+from dotenv import load_dotenv
 
-OPENAI_API_KEY = "MY_API"
+# Load environment variables from .env file
+load_dotenv()
+# Retrieve the API key from an environment variable
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+if OPENAI_API_KEY is None:
+    raise ValueError("OPENAI_API_KEY environment variable is not set.")
 
 class GPTCommunicator:
     def __init__(self):
